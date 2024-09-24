@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-const page = () => {
+const Page = () => {
     const dispatch = useDispatch();
     useEffect(() => {
          dispatch(resetCart())
-    }, [])
+    })
   return (
     <Container className="flex items-center justify-center py-20" >
         <div className="min-h-[400px] flex flex-col items-center justify-center gap-y-5">
@@ -32,4 +32,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page;
