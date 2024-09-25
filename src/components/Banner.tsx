@@ -1,5 +1,5 @@
 'use client';
-import React , {use, useState} from 'react';
+import React , { useState} from 'react';
 import  Slider from 'react-slick';
 import { sliderOne, sliderTwo, sliderThree } from '@/assets';
 import Image from 'next/image';
