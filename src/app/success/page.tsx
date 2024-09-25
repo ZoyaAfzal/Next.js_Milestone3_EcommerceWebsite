@@ -16,12 +16,12 @@ const Page = () => {
             <h2 className="text-4xl font-bold">Your payment has Accepted by nextamazonpro.com</h2>
             <p>Now you can visit your Orders or continue Shopping with us.</p>
             <div className="flex items-center gap-x-5">
-                <Link href={'/order'}>
+                <Link href={"/order"}>
                 <button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-designColor duration-300">
                 View Orders
                 </button>
                 </Link>
-                <Link href={'/'}>
+                <Link href={"/"}>
                 <button className="bg-black text-slate-100 w-44 h-12 rounded-full text-base font-semibold hover:bg-designColor duration-300">
                 Continue Shopping
                 </button>
