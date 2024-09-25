@@ -1,12 +1,12 @@
 import Banner from "../components/Banner";
-import Product from "../components/Products";
+import Products from "../components/Products";
 
 
 export default function Home() {
   return (
    <main>
     <Banner />
-    <Product />
+    <Products />
    </main>
   );
 }
