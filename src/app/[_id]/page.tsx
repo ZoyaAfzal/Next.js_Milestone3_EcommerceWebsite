@@ -7,15 +7,19 @@ import FormattedPrice from "@/components/FormattedPrice"
 
 
 type Props= {
-    searchParams:{[key: string]: string | string[] | undefined}
+    //searchParams:{[key: string]: string | string[] | undefined}
+    params: {
+        _id: string;
+    }
 
 }
 
-const page = async({ searchParams }: Props) => {
+const page = async({ params }: Props) => {
     const products = await getProducts()
-    const _idString = searchParams?._id
+    //const _idString = searchParams?._id
+    const _idString = params._id
     const _id = Number(_idString);
-    console.log(searchParams)
+    //console.log(searchParams)
 
     const singleProduct = (_id:number) => {
         const item = products.find((product: ProductType)=> product._id === _id)
