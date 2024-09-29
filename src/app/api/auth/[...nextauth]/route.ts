@@ -9,33 +9,33 @@ import DiscordProvider from "next-auth/providers/discord";
 const authOptions ={
     providers: [
         GithubProvider({
-            clientId: process.env.GITHUB_CLIENT_ID!,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET!
+            clientId: process.env.GITHUB_ID! as string,
+            clientSecret: process.env.GITHUB_SECRET! as string
 
         }), 
         GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID!,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+            clientId: process.env.GOOGLE_CLIENT_ID! as string,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET! as string
 
         }),
         LinkedInProvider({
-            clientId: process.env.LINKEDIN_CLIENT_ID!,
-            clientSecret: process.env.LINKEDIN_CLIENT_SECRET!
+            clientId: process.env.LINKEDIN_CLIENT_ID! as string,
+            clientSecret: process.env.LINKEDIN_CLIENT_SECRET! as string
 
         }), 
         InstagramProvider({
-            clientId: process.env.INSTAGRAM_CLIENT_ID!,
-            clientSecret: process.env.INSTAGRAM_CLIENT_SECRET!
+            clientId: process.env.INSTAGRAM_CLIENT_ID! as string,
+            clientSecret: process.env.INSTAGRAM_CLIENT_SECRET! as string
 
         }), 
         DiscordProvider({
-            clientId: process.env.DISCORD_CLIENT_ID!,
-            clientSecret: process.env.DISCORD_CLIENT_SECRET!
+            clientId: process.env.DISCORD_CLIENT_ID! as string,
+            clientSecret: process.env.DISCORD_CLIENT_SECRET! as string
 
         }), 
         Auth0Provider({
-            clientId: process.env.AUTH0_CLIENT_ID!,
-            clientSecret: process.env.AUTH0_CLIENT_SECRET!,
+            clientId: process.env.AUTH0_CLIENT_ID! as string,
+            clientSecret: process.env.AUTH0_CLIENT_SECRET! as string,
             issuer: process.env.AUTH0_ISSUER
 
         }),
