@@ -6,7 +6,7 @@ import LinkedInProvider from "next-auth/providers/linkedin";
 import InstagramProvider from "next-auth/providers/instagram";
 import DiscordProvider from "next-auth/providers/discord";
 
-const authOptions ={
+const authOptions =({
     providers: [
         GithubProvider({
             clientId: process.env.GITHUB_ID! as string,
@@ -40,7 +40,9 @@ const authOptions ={
 
         }),
 
-    ]
-}
+    ],
+    secret: process.env.NEXTAUTH_SECRET,
+
+})
 const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST };
