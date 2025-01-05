@@ -5,6 +5,7 @@ import { sliderOne, sliderTwo, sliderThree } from '@/assets';
 import Image from 'next/image';
 import { Clock, Smartphone, Map, MailPlus } from 'lucide-react';
 
+
 const Banner = () => {
     const [dotActive, setDotActive] = useState(0);
     var settings = {
@@ -20,28 +21,30 @@ const Banner = () => {
         setDotActive(next)
     },
     appendDots:(dots:any) => (
-        <div
+        <div 
         style={{
           position: "absolute",
-          top: "70%",
+          top: "74%",
           left: "67%",
           transform: "translate(-50%, 0)",
         }}
       >
-        <ul
-          style={{
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            gap: 10,
-          }}
-        >
+       
+        <ul className='md:mr-72 lg:mr-0 sm:mr-60 xs:mr-48'
+        style={{
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        gap: 10,
+        }}  
+       >
           {dots}
         </ul>
-      </div>
+            </div>
+    
     ),
     customPaging:(i:any) => (
-        <div
+        <div 
         style={
           i === dotActive
             ? {
