@@ -15,6 +15,10 @@ const initialState: StoreState = {
     favoriteData: []
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 40dbbae (onlineecommercestore)
 export const proSlice = createSlice({
     name:'pro',
     initialState,
@@ -60,7 +64,11 @@ export const proSlice = createSlice({
     deleteFavorite: (state, action) => {
         state.favoriteData = state.favoriteData.filter((item) => item._id !== action.payload)
     },
+<<<<<<< HEAD
     resetFavorite: (state, action) => {
+=======
+    resetFavorite: (state) => {
+>>>>>>> 40dbbae (onlineecommercestore)
         state.favoriteData = [];
     },
     addUser: (state, action) => {

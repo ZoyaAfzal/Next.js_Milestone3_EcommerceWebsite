@@ -17,7 +17,11 @@ const Product = ({products}: Item) => {
   const {favoriteData} = useSelector((state: StateProps) => state.pro);
 
   const isFavorite = (productId:any)=> {
+<<<<<<< HEAD
     return favoriteData.some((favoriteItem)=> favoriteItem._id === productId)
+=======
+    return favoriteData.some((favoriteItem) => favoriteItem._id === productId)
+>>>>>>> 40dbbae (onlineecommercestore)
   }
 
 
