@@ -6,26 +6,17 @@ import { usePathname } from "next/navigation";
 import { Heart, ShoppingBagIcon } from "lucide-react";
 import { navigation } from "@/constants/data";
 import { signIn, useSession } from "next-auth/react";
-<<<<<<< HEAD
-import { useDispatch, useSelector } from "react-redux";
-import { StateProps } from "../../type";
-import { addToFavorite } from "@/redux/proSlice";
-=======
 import { useSelector } from "react-redux";
 import { StateProps } from "../../type";
 
 
->>>>>>> 40dbbae (onlineecommercestore)
 const Navbar = () => {
     const pathname = usePathname();
     const {data: session} = useSession();
 
     const {productData, favoriteData} = useSelector((state: StateProps) => state.pro);
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 40dbbae (onlineecommercestore)
+  
   
   return (
     <div className="w-full h-20 border-b-[1px] border-b-zinc-500 bg-white text-zinc-600 sticky top-0 z-50 bg-white/80 blackdrop-blur-2xl">
