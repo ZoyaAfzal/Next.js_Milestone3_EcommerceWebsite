@@ -1,8 +1,8 @@
 import { getProducts } from "@/helpers"
-import { ProductType } from "../../../type"
 import Container from "@/components/Container"
 import Image from "next/image"
 import FormattedPrice from "@/components/FormattedPrice"
+import { ProductType } from "../../../type";
 
 
 
@@ -14,7 +14,7 @@ type Props= {
 
 }
 
-const page = async({ params }: Props) => {
+const page = async({ params }: Props ) => {
     const products = await getProducts()
     //const _idString = searchParams?._id
     const _idString = params._id
@@ -28,7 +28,6 @@ const page = async({ params }: Props) => {
 
     const product = singleProduct(_id);
     
-
   return (
     <Container className="flex items-center flex-col md:flex-row px-4 xl:px-0">
         <div className="w-full md:w-1/2 overflow-hidden bg-zinc-50 flex items-center justify-center p-10">
@@ -46,7 +45,7 @@ const page = async({ params }: Props) => {
             className="text-base font-semibold bg-designColor underline underline-offset-2"/>
             {""} from this product.
             </p>
-            <button className="bg-designColor/80 text-zinc-700 px-6 py-2 font-medium rounded-md hover:bg-designColor hover:text-black cursor-pointer duration-200 hover:shadow-lg w-40 my-2">Add to Cart</button>
+            <button className="bg-designColor/80 text-zinc-700 px-2 py-2 font-medium rounded-md hover:bg-designColor hover:text-black cursor-pointer duration-200 hover:shadow-lg w-28 my-2">Add to Cart</button>
             {
                 product?.isNew && (<p className="text-designColor font-semibold">New Arrival</p>
             )}

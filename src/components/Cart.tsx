@@ -80,11 +80,11 @@ const Cart = () => {
          <table className='w-full text-sm text-left'>
           <thead className='text-xs text-white uppercase bg-zinc-950'>
             <tr>
-                <th scope="col" className='px-6 py-3' >Product Information</th>
-                <th scope="col" className='px-6 py-3' >Unit Price</th>
-                <th scope="col" className='px-6 py-3' >Quantity</th> 
-                <th scope="col" className='px-6 py-3' >Subtotal</th> 
-                <th scope="col" className='px-6 py-3' >Saving</th>   
+                <th scope="col" className='px-4 md:px-6 py-3' >Product Information</th>
+                <th scope="col" className='px-4 md:px-6 py-3' >Unit Price</th>
+                <th scope="col" className='px-4 md:px-6 py-3' >Quantity</th> 
+                <th scope="col" className='px-4 md:px-6 py-3' >Subtotal</th> 
+                <th scope="col" className='px-4 md:px-6 py-3' >Saving</th>   
 
             </tr>
           </thead>
@@ -92,20 +92,20 @@ const Cart = () => {
             productData.map((item: ProductType) => (
               <tbody key={item?._id}>
                 <tr className='bg-white border-b-[1px] border-b-zinc-300'>
-                  <th scope="row" className='px-6 py-4 flex items-center gap-3'>
+                  <th scope="row" className='px-4 md:px-6 py-4 flex flex-col md:flex-row items-center gap-3'>
                     <X onClick={()=> {dispatch(deleteProduct(item?._id)),
                       toast.success(
                         `${item.title} is removed from Wishlist!`
                       )
                     }}className='w-4 h-4 hover:text-red-600 cursor-pointer duration-200'/>
                     <Image src={item?.image} alt="product image" width={500} height={500}
-                    className='w-24 object-contain'/>
+                    className='w-20 md:w-24 object-contain'/>
                     <p className='text-base font-medium text-black'>{item?.title}</p>
                   </th>
-                  <td className='px-6 py-4'>
+                  <td className='px-4 md:px-6 py-4'>
                     <FormattedPrice amount={item?.price}/>
                   </td>
-                  <td className='px-6 py-4 flex items-center gap-4'>
+                  <td className='px-4 md:px-6 py-4 flex items-center gap-2 md:gap-4'>
                     <span className='border border-zinc-300 p-1 rounded-md hover:border-zinc-800 cursor-pointer duration-200 inline-flex items-center justify-center'>
                       <Minus onClick={()=> item?.quantity > 1 ? dispatch(decreaseQuantity(item)) && toast.success("Quantity decreased Successfully!"): toast.error("Can not delete more than one")}className='w-4 h-4'/>
                     </span>
@@ -118,11 +118,11 @@ const Cart = () => {
                       />
                     </span>
                   </td>
-                  <td className='px-6 py-4'>
+                  <td className='px-4 md:px-6 py-4'>
                     <FormattedPrice amount={item?.price * item?.quantity}/>
                   </td>
-                  <td className='px-6 py-4'>
-                    <p className='bg-zinc-900 w-20 text-sm font-semibold text-center text-white py-1 rounded-md'>{calculatePercentage(item?.price, item?.previousPrice)}{" "}%save</p>
+                  <td className='px-4 md:px-6 py-4'>
+                    <p className='bg-zinc-900 w-16 md:w-20 text-sm font-semibold text-center text-white py-1 rounded-md'>{calculatePercentage(item?.price, item?.previousPrice)}{" "}%save</p>
                   </td>
                 </tr>
               </tbody>
@@ -130,17 +130,15 @@ const Cart = () => {
           }
          </table>
         </div>
-        <button onClick={handleReset}className='bg-zinc-950 text-zinc-200 w-36 py-3 mt-5 rounded-md uppercase text-xs font-semibold hover:bg-red-700 hover:text-white duration-200'>Reset Cart</button>
-        <div className='mt-4 bg-white max-w-xl p-4 flex flex-col gap-1'>
-          <p className='border-b-[1px] border-b-designColor py-1'>Cart Summary</p>
+        <div className="lg:ml-60">
+        <button onClick={handleReset}className='bg-zinc-950 text-zinc-200 w-32 md:w-36 py-2 md:py-3 mt-5 rounded-md uppercase text-xs font-semibold hover:bg-red-700 hover:text-white duration-200 lg:ml-[320px]'>Reset Cart</button>
+        <div className='mt-4 bg-white max-w-md md:max-w-xl p-4 flex flex-col gap-1 lg:mt-10 lg:ml-[100px]'>
           <p className='flex items-center justify-between'>Total Items <span>{productData.length}</span></p> 
           <p className='flex items-center justify-between'>Price {" "} <span><FormattedPrice amount={rowPrice}/></span></p>
           <p className='flex items-center justify-between'>Discount {" "} <span><FormattedPrice amount={rowPrice - totalAmt}/></span></p>
           <p className='flex items-center justify-between'>Total Price {" "} <span><FormattedPrice amount={totalAmt} className='font-semibold text-lg'/></span></p>
           <button onClick={handleCheckout}className='bg-zinc-800 text-zinc-200 my-2 py-2 uppercase text-center rounded-md font-semibold hover:bg-black hover:text-white duration-200'>Proceed to Checkout</button>
-
-
-
+        </div>
         </div>
         </div>
         ): 
