@@ -37,7 +37,7 @@ export const proSlice = createSlice({
         decreaseQuantity: (state, action) => {
             const existingProduct = state.productData.find((item: ProductType)=> item?._id === action.payload._id);
         if(existingProduct?.quantity === 1){
-            existingProduct.quantity ===1;
+            existingProduct.quantity === 1;
         }else{
             existingProduct && existingProduct.quantity--;
         }
@@ -49,15 +49,20 @@ export const proSlice = createSlice({
         state.productData = [];
     },
     addToFavorite: (state, action) => {
-        const existingProduct = state.productData.find((item: ProductType)=> item?._id === action.payload._id);
+        const existingProduct = state.productData.find((item: ProductType)=> item._id === action.payload._id);
         if(existingProduct){
             state.favoriteData = state.favoriteData.filter(
-                (item) => item?._id !== action.payload._id
+                (item) => item._id !== action.payload._id
             );
         }else {
             state.favoriteData.push(action.payload);
         }
     },
+    removeFromFavorite: (state, action) => {
+        state.favoriteData = state.favoriteData.filter(
+          (item) => item._id !== action.payload._id
+        );
+      },
     deleteFavorite: (state, action) => {
         state.favoriteData = state.favoriteData.filter((item) => item._id !== action.payload)
     },
@@ -67,18 +72,18 @@ export const proSlice = createSlice({
     addUser: (state, action) => {
         state.userInfo = action.payload;
     },
-    deleteUser: (state, action) => {
+    deleteUser: (state) => {
         state.userInfo = null;
     },
     addOrder: (state, action) => {
-        const existingOrder = state.orderData.find((item: ProductType) => item?._id === action.payload._id);
+        const existingOrder = state.orderData.find((item: ProductType) => item._id === action.payload._id);
     if(existingOrder){
         state.orderData.push(action.payload);
     } else {
         state.orderData = action.payload;
     }
     },
-    resetOrder: (state, action) => {
+    resetOrder: (state) => {
         state.orderData = [];
     }
 },
@@ -96,5 +101,6 @@ resetOrder,
 addToFavorite,
 deleteFavorite,
 resetFavorite,
+removeFromFavorite
 } = proSlice.actions;
 export default proSlice.reducer;

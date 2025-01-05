@@ -19,7 +19,7 @@ const Navbar = () => {
   
   return (
     <div className="w-full h-20 border-b-[1px] border-b-zinc-500 bg-white text-zinc-600 sticky top-0 z-50 bg-white/80 blackdrop-blur-2xl">
-      <div className="max-w-screen-xl mx-auto h-full flex items-center ml-28 justify-between px-4 xl:px-0">
+      <div className="max-w-screen-xl mx-auto h-full flex items-center ml-8 justify-between px-4 xl:px-0">
         <Logo />
         <ul className="hidden md:flex items-center gap-5 text-sm uppercase font-semibold">
             {
@@ -33,12 +33,12 @@ const Navbar = () => {
                 ))
             }
         </ul>
-        <div className="flex items-center gap-x-5 ">
+        <div className="flex items-center gap-x-5 mr-10">
           <Link href={"/wishlist"} 
           className="hover:text-black cursor-pointer duration-200 relative group">
-          <Heart 
-           className="w-7 h-7"/>
-          <span className="absolute top-0 -left-1 bg-zinc-800 text-zinc-200 w-4 h-4 rounded-full text-xs flex items-center justify-center group:hover:bg-black font-semibold group-hover:text-white">{favoriteData ? favoriteData.length : 0}</span>        
+          <Heart
+          className="w-7 h-7"/>
+          <span className="absolute top-0 -left-1 bg-zinc-800 text-zinc-200 w-4 h-4 rounded-full text-xs flex items-center justify-center group:hover:bg-black font-semibold group-hover:text-white">{favoriteData ? favoriteData.length : 0}</span>  
           </Link>
           <div className="flex items-center gap-x-5">
           <Link href={"/cart"} 

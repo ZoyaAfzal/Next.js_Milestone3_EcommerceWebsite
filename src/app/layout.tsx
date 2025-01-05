@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import Navbar from "../components/Navbar";
 import cn from "@/lib/utils";
 import "slick-carousel/slick/slick.css";
 import Footer from "@/components/Footer";
 import Layout from "@/components/Layout";
+import "./globals.css";
 
 
 const inter = Inter({ subsets: ["latin"] });
