@@ -17,7 +17,7 @@ const Footer = () => {
                 }
 
             </ul>
-            <p className='text-right'>Join with me at reactbd.com</p>
+            <p className='text-right mr-4'>Join with me at reactbd.com</p>
         </Container>
     </div>
   )
