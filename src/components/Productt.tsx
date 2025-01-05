@@ -6,7 +6,7 @@ import Image from "next/image";
 import { Heart } from "lucide-react";
 import FormattedPrice from "./FormattedPrice";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, addToFavorite } from "@/redux/proSlice";
+import { addToCart, addToFavorite, removeFromFavorite } from "@/redux/proSlice";
 import toast, { Toaster } from "react-hot-toast";
 
 interface Item {
@@ -40,10 +40,11 @@ const Product = ({products}: Item) => {
                 <Heart  
                 fill={isFavorite(item._id) ? "red" : "black"}
                 onClick={() => {
-                dispatch(addToFavorite(item));
-                if(isFavorite(item?._id)){
+                  if(isFavorite(item?._id)){
+                    dispatch(removeFromFavorite(item));
                     toast.error(`${item.title} removed from favorites!`);
-                }else {
+                  }else {
+                  dispatch(addToFavorite(item));
                     toast.success(`${item.title} added to favorites!`);
                 }
                 }}
