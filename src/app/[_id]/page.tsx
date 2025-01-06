@@ -45,7 +45,7 @@ const page = async({ params }: Props ) => {
             className="text-base font-semibold bg-designColor underline underline-offset-2"/>
             {""} from this product.
             </p>
-            <button className="bg-designColor/80 text-zinc-700 px-2 py-2 font-medium rounded-md hover:bg-designColor hover:text-black cursor-pointer duration-200 hover:shadow-lg w-28 my-2">Add to Cart</button>
+           { /*<button className="bg-designColor/80 text-zinc-700 px-2 py-2 font-medium rounded-md hover:bg-designColor hover:text-black cursor-pointer duration-200 hover:shadow-lg w-28 my-2">Add to Cart</button>*/}
             {
                 product?.isNew && (<p className="text-designColor font-semibold">New Arrival</p>
             )}
@@ -58,4 +58,4 @@ const page = async({ params }: Props ) => {
   )
 }
 
-export default page
+export default page;

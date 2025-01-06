@@ -6,7 +6,7 @@ import React from 'react';
 const page = () => {
   return (
     <Container>
-        <Title title="Your Cart"/>
+        <Title title="Your Cart" className='mx-4'/>
         <Cart />
        
     </Container>

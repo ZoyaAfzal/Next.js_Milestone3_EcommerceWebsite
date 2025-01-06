@@ -49,14 +49,15 @@ export const proSlice = createSlice({
         state.productData = [];
     },
     addToFavorite: (state, action) => {
-        const existingProduct = state.productData.find((item: ProductType)=> item._id === action.payload._id);
+        const existingProduct = state.favoriteData.find((item: ProductType)=> item._id === action.payload._id);
         if(existingProduct){
             state.favoriteData = state.favoriteData.filter(
                 (item) => item._id !== action.payload._id
             );
         }else {
-            state.favoriteData.push(action.payload);
-        }
+            state.favoriteData.push(action.payload); 
+          
+        } 
     },
     removeFromFavorite: (state, action) => {
         state.favoriteData = state.favoriteData.filter(

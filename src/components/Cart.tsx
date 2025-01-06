@@ -131,7 +131,7 @@ const Cart = () => {
          </table>
         </div>
         <div className="lg:ml-60">
-        <button onClick={handleReset}className='bg-zinc-950 text-zinc-200 w-32 md:w-36 py-2 md:py-3 mt-5 rounded-md uppercase text-xs font-semibold hover:bg-red-700 hover:text-white duration-200 lg:ml-[320px]'>Reset Cart</button>
+        <button onClick={handleReset} className='bg-zinc-950 text-zinc-200 w-32 md:w-36 py-2 md:py-3 mt-5 rounded-md uppercase text-xs font-semibold hover:bg-red-700 hover:text-white duration-200 lg:ml-[320px]'>Reset Cart</button>
         <div className='mt-4 bg-white max-w-md md:max-w-xl p-4 flex flex-col gap-1 lg:mt-10 lg:ml-[100px]'>
           <p className='flex items-center justify-between'>Total Items <span>{productData.length}</span></p> 
           <p className='flex items-center justify-between'>Price {" "} <span><FormattedPrice amount={rowPrice}/></span></p>

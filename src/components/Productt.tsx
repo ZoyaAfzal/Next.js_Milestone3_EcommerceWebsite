@@ -14,7 +14,7 @@ interface Item {
 }
 
 const Product = ({products}: Item) => { 
-  const {favoriteData} = useSelector((state: StateProps) => state.pro);
+  const { favoriteData } = useSelector((state: StateProps) => state.pro);
 
   const isFavorite = (productId:any)=> {
     return favoriteData.some((favoriteItem)=> favoriteItem._id === productId)
@@ -38,17 +38,18 @@ const Product = ({products}: Item) => {
                 className="w-full h-80 object-contain lg:object-cover group-hover:scale-105 duration-300"
                 />
                 </Link>
-                <Heart  
+               <Heart  
                 fill={isFavorite(item._id) ? "red" : "black"}
                 onClick={() => {
                   if(isFavorite(item?._id)){
-                    dispatch(removeFromFavorite(item));
-                    toast.error(`${item.title} removed from favorites!`);
+                    dispatch(removeFromFavorite(item)),
+                    toast.error(`${item.title} is removed from favorites!`);
                   }else {
-                  dispatch(addToFavorite(item));
-                    toast.success(`${item.title} added to favorites!`);
+                    dispatch(addToFavorite(item)),
+                    toast.success(`${item.title} is added to favorites!`);
                 }
                 }}
+ 
                  className="absolute top-4 right-4 text-zinc-500 w-5 h-5 hover:text-black cursor-pointer duration-200"/>
                 <div className="p-4 bg-zinc-100 group-hover:bg-zinc-50 group-hover:shadow-xl duration-300">
                   <p className="group-hover:text-designColor duration-300">{item?.title}</p>
