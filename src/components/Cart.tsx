@@ -52,7 +52,7 @@ const Cart = () => {
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
   const handleCheckout = async() => {
     const stripe = await stripePromise;
-    const response = await fetch("http://localhost:3000/api/checkout",{
+    const response = await fetch("https://next-js-milestone3-ecommerce-website.vercel.app/api/checkout",{
       method:"POST",
       headers:{"Content-Type": "application/json"},
       body:JSON.stringify({
