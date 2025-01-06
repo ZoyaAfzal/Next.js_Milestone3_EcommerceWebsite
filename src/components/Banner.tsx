@@ -73,7 +73,7 @@ const Banner = () => {
   };
 
   return (
-    <div className='lg:min-h-screen relative mb-60'>
+    <div className='lg:min-h-screen relative mb-40'>
         <Slider {...settings}>
       <div className='w-full py-32 lg:py-0 lg:h-screen bg-slate-200 relative'>
         <div className='w-full lg:w-1/3 hidden lg:inline-block h-full bg-designColor z-0 relative'>
